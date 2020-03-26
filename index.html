@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Lúdszámláló</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <p>Eddig <span id="number">8</span> ludat láttam</p>
+        <button onclick="lud()">ÉPP MOST LÁTTAM EGY LUDAT</button>
+
+        <script>
+            var number = 8;
+            function lud() {
+                document.getElementById("number").innerHTML= ++number;
+            }
+        </script>
+
+    </body>
+</html>
