@@ -6,15 +6,16 @@
     </head>
     <body>
 
-        <p>Eddig <span id="number">8</span> ludat láttam</p>
-        <button onclick="lud()">ÉPP MOST LÁTTAM EGY LUDAT</button>
+        <p id="text">Még nem láttam ludat</p>
+        <button onClick="lud()">ÉPP MOST LÁTTAM EGY LUDAT</button>
 
         <script>
-            var number = 8;
+            var number = 1;
             function lud() {
-                document.getElementById("number").innerHTML= ++number;
+                document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                ++number;
             }
         </script>
-
+        
     </body>
 </html>
