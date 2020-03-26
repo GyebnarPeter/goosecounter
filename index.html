@@ -12,10 +12,14 @@
         <script>
             var number = 1;
             function lud() {
-                document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
-                ++number;
+                if ( number < 10 ) {
+                    document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                    ++number;
+                } else {
+                    document.getElementById("text").innerHTML="Túl sok ludat láttál már, biztosan tudós vagy";
+                }
             }
         </script>
-        
+
     </body>
 </html>
