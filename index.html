@@ -6,20 +6,27 @@
     </head>
     <body>
 
-        <p id="text">Még nem láttam ludat</p>
-        <button onClick="lud()">ÉPP MOST LÁTTAM EGY LUDAT</button>
+        <p id="text">Hány ludat láttam?</p>
+        <input type="text" name="name" id="geese">
+        <button onClick="lud()">HOZZÁADOM A LUDAMAT</button>
 
         <script>
-            var number = 1;
+            var x;
+            var number = 0;
             function lud() {
-                if ( number < 10 ) {
-                    document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                x = document.getElementById("geese").value;
+                if ( x == "" ) {
                     ++number;
+                    document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                } else if (!isNaN(x)) {
+                    x = parseInt(x);
+                    number += x;
+                    document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
                 } else {
-                    document.getElementById("text").innerHTML="Túl sok ludat láttál már, biztosan tudós vagy";
+                    x = String;
+                    document.getElementById("text").innerHTML="<span>Nem számot adtál meg</span>";
                 }
             }
         </script>
-
     </body>
 </html>

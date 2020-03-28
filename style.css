@@ -9,3 +9,10 @@ button {
     margin: 20px auto;
     padding: 10px;
 }
+input {
+    width: 70px;
+    padding: 5px;
+}
+span {
+    color: red;
+}
