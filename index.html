@@ -8,23 +8,27 @@
 
         <p id="text">Hány ludat láttam?</p>
         <input type="text" name="name" id="geese">
+        <label id="alert"></label>
         <button onClick="lud()">HOZZÁADOM A LUDAMAT</button>
 
         <script>
             var x;
             var number = 0;
+            function text() {
+                document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                document.getElementById("alert").innerHTML="";
+            }
             function lud() {
                 x = document.getElementById("geese").value;
                 if ( x == "" ) {
                     ++number;
-                    document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                    text();
                 } else if (!isNaN(x)) {
                     x = parseInt(x);
                     number += x;
-                    document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                    text();
                 } else {
-                    x = String;
-                    document.getElementById("text").innerHTML="<span>Nem számot adtál meg</span>";
+                    document.getElementById("alert").innerHTML="Nem számot adtál meg";
                 }
             }
         </script>

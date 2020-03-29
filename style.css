@@ -4,15 +4,24 @@ body {
     font-family: 'Montserrat';
     margin: 50px 0 0 0;
 }
+p {
+    margin: 0;
+}
 button {
     display: block;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 10px;
 }
 input {
     width: 70px;
     padding: 5px;
+    margin: 20px 0 0 0;
 }
-span {
+label {
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
     color: red;
+    font-size: 14px;
 }
