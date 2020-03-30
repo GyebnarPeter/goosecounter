@@ -12,25 +12,44 @@
         <button onClick="lud()">HOZZÁADOM A LUDAMAT</button>
 
         <script>
-            var x;
             var number = 0;
-            function text() {
-                document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
-                document.getElementById("alert").innerHTML="";
-            }
             function lud() {
-                x = document.getElementById("geese").value;
+                var x = document.getElementById("geese").value;
+                var errorMessage = "nem számot adtál meg";
+                var errorMessageNone = document.getElementById("alert").innerHTML="";
                 if ( x == "" ) {
                     ++number;
-                    text();
+                    errorMessageNone;
                 } else if (!isNaN(x)) {
                     x = parseInt(x);
                     number += x;
-                    text();
+                    errorMessageNone;
                 } else {
-                    document.getElementById("alert").innerHTML="Nem számot adtál meg";
+                    document.getElementById("alert").innerHTML=errorMessage;
                 }
+                document.getElementById("text").innerHTML="Eddig "  + number + " ludat láttam";
             }
         </script>
+<!--
+        <script>
+            var x;
+            var number = 0;
+            function lud() {
+                x = document.getElementById("geese").value;
+                var errorMessage_invisible = document.getElementById("alert").innerHTML="";
+                if ( x == "" ) {
+                    ++number;
+                    errorMessage_invisible;
+                } else if (!isNaN(x)) {
+                    x = parseInt(x);
+                    number += x;
+                    errorMessage_invisible;
+                } else {
+                    document.getElementById("alert").innerHTML="nem számot adtál meg";
+                }
+                document.getElementById("text").innerHTML="Eddig "  + number + " ludat láttam";
+            }
+        </script>
+-->
     </body>
 </html>
