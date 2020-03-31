@@ -15,41 +15,36 @@
             var number = 0;
             function lud() {
                 var x = document.getElementById("geese").value;
-                var errorMessage = "nem számot adtál meg";
-                var errorMessageNone = document.getElementById("alert").innerHTML="";
-                if ( x == "" ) {
-                    ++number;
-                    errorMessageNone;
-                } else if (!isNaN(x)) {
-                    x = parseInt(x);
-                    number += x;
-                    errorMessageNone;
-                } else {
-                    document.getElementById("alert").innerHTML=errorMessage;
+                if (x!=="" && isNaN(x)) {
+                    document.getElementById("alert").innerHTML="nem számot adtál meg";
+                    return;
                 }
-                document.getElementById("text").innerHTML="Eddig "  + number + " ludat láttam";
+                if (x==="") {
+                    number += 1;
+                } else {
+                    number += parseInt(x);
+                }
+                document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
+                document.getElementById("alert").innerHTML="";
             }
         </script>
 <!--
         <script>
-            var x;
             var number = 0;
             function lud() {
-                x = document.getElementById("geese").value;
-                var errorMessage_invisible = document.getElementById("alert").innerHTML="";
-                if ( x == "" ) {
-                    ++number;
-                    errorMessage_invisible;
-                } else if (!isNaN(x)) {
-                    x = parseInt(x);
-                    number += x;
-                    errorMessage_invisible;
+                var x = document.getElementById("geese").value;
+                var errorMessage = "";
+                if( x === "") {
+                    number += 1;
+                } else if ( !isNaN(x) ) {
+                    number += parseInt(x);
                 } else {
-                    document.getElementById("alert").innerHTML="nem számot adtál meg";
+                    errorMessage = "nem számot adtál meg";
                 }
-                document.getElementById("text").innerHTML="Eddig "  + number + " ludat láttam";
+                document.getElementById("text").innerHTML = "Eddig " + number + " ludat láttam";
+                document.getElementById("alert").innerHTML=errorMessage;
             }
         </script>
--->
+-->       
     </body>
 </html>
