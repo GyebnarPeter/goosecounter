@@ -6,45 +6,37 @@
     </head>
     <body>
 
-        <p id="text">Hány ludat láttam?</p>
-        <input type="text" name="name" id="geese">
+        <p id="names"></p>
+        <input type="text" id="newGeese">
         <label id="alert"></label>
-        <button onClick="lud()">HOZZÁADOM A LUDAMAT</button>
+        <button onclick="addGoose()">HOZZÁADOM EZT A LUDAT</button>
 
         <script>
-            var number = 0;
-            function lud() {
-                var x = document.getElementById("geese").value;
-                if (x!=="" && isNaN(x)) {
-                    document.getElementById("alert").innerHTML="nem számot adtál meg";
-                    return;
-                }
-                if (x==="") {
-                    number += 1;
+            
+            var geese = [" Kálmán Bojtár", " Cucu"];
+            var text = "Legutoljára a(z)" + geese + " ludakat láttam.";
+            document.getElementById("names").innerHTML = text;
+
+            function addGoose() {
+                var errorMessage = "nem adtál meg számot";
+                var x = document.getElementById("newGeese").value;
+    
+                if (x === "") {
+                    document.getElementById("alert").innerHTML = errorMessage;
+                } else if (geese.length <= 4) {
+                    geese.unshift(" " + x);
+                    errorMessage = "";
                 } else {
-                    number += parseInt(x);
+                    geese.pop();
+                    geese.unshift(" " + x);
+                    errorMessage = "";
                 }
-                document.getElementById("text").innerHTML="Eddig " + number + " ludat láttam";
-                document.getElementById("alert").innerHTML="";
+                // Ha a text változóval akarom kiiratni a következő sorban, nem működik. Miért??
+                document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese + " ludakat láttam.";
+                document.getElementById("alert").innerHTML = errorMessage;
             }
+
         </script>
-<!--
-        <script>
-            var number = 0;
-            function lud() {
-                var x = document.getElementById("geese").value;
-                var errorMessage = "";
-                if( x === "") {
-                    number += 1;
-                } else if ( !isNaN(x) ) {
-                    number += parseInt(x);
-                } else {
-                    errorMessage = "nem számot adtál meg";
-                }
-                document.getElementById("text").innerHTML = "Eddig " + number + " ludat láttam";
-                document.getElementById("alert").innerHTML=errorMessage;
-            }
-        </script>
--->       
+
     </body>
 </html>
