@@ -6,7 +6,7 @@
     </head>
     <body>
 
-        <p id="names"></p>
+        <p>Legutoljára a(z)<div id="names"></div>ludakat láttam.</p>
         <input type="text" id="newGeese">
         <label id="alert"></label>
         <button onclick="addGoose()">HOZZÁADOM EZT A LUDAT</button>
@@ -14,13 +14,12 @@
         <script>
             
             var geese = [" Kálmán Bojtár", " Cucu"];
-            var text = "Legutoljára a(z)" + geese + " ludakat láttam.";
-            document.getElementById("names").innerHTML = text;
-
+            document.getElementById("names").innerHTML = geese;
+            
             function addGoose() {
                 var errorMessage = "nem adtál meg számot";
                 var x = document.getElementById("newGeese").value;
-    
+
                 if (x === "") {
                     document.getElementById("alert").innerHTML = errorMessage;
                 } else if (geese.length <= 4) {
@@ -31,8 +30,7 @@
                     geese.unshift(" " + x);
                     errorMessage = "";
                 }
-                // Ha a text változóval akarom kiiratni a következő sorban, nem működik. Miért??
-                document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese + " ludakat láttam.";
+                document.getElementById("names").innerHTML = geese;
                 document.getElementById("alert").innerHTML = errorMessage;
             }
 
