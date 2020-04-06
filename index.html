@@ -22,14 +22,14 @@
                 if (x === "") {
                     document.getElementById("alert").innerHTML = errorMessage;
                 } else if (geese.length <= 4) {
-                    geese.unshift(" " + x);
+                    geese.unshift(x);
                     errorMessage = "";
                 } else {
                     geese.pop();
-                    geese.unshift(" " + x);
+                    geese.unshift(x);
                     errorMessage = "";
                 }
-                document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese + " nevű ludakat láttam.";
+                document.getElementById("names").innerHTML = "Legutoljára a(z) " + geese.join(" és ") + " nevű ludakat láttam.";
                 document.getElementById("alert").innerHTML = errorMessage;
             }
 
