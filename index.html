@@ -6,15 +6,14 @@
     </head>
     <body>
 
-        <p>Legutoljára a(z)<div id="names"></div>ludakat láttam.</p>
+        <p id="names">Még nem láttam ludat.</p>
         <input type="text" id="newGeese">
         <label id="alert"></label>
         <button onclick="addGoose()">HOZZÁADOM EZT A LUDAT</button>
 
         <script>
             
-            var geese = [" Kálmán Bojtár", " Cucu"];
-            document.getElementById("names").innerHTML = geese;
+            var geese = [];
             
             function addGoose() {
                 var errorMessage = "nem adtál meg nevet";
@@ -30,7 +29,7 @@
                     geese.unshift(" " + x);
                     errorMessage = "";
                 }
-                document.getElementById("names").innerHTML = geese;
+                document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese + " nevű ludakat láttam.";
                 document.getElementById("alert").innerHTML = errorMessage;
             }
 
