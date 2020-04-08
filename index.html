@@ -14,13 +14,17 @@
         <script>
             
             var geese = [];
-
+        
             function print() {
-                if (geese.length == 1) {
-                    document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese + " nevű ludakat láttam.";
+                
+                var text;
+
+                if (geese.length === 1) {
+                    text = "Legutoljára a(z)" + geese + " nevű ludat láttam.";
                 } else {
-                    document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese.slice(0, geese.length-1) + " és" + geese[geese.length-1] + " nevű ludakat láttam.";
+                    text = "Legutoljára a(z)" + geese.slice(0, geese.length-1) + " és" + geese[geese.length-1] + " nevű ludakat láttam.";
                 }
+                document.getElementById("names").innerHTML = text;
             }
             
             function addGoose() {
