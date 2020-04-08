@@ -14,6 +14,14 @@
         <script>
             
             var geese = [];
+
+            function print() {
+                if (geese.length == 1) {
+                    document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese + " nevű ludakat láttam.";
+                } else {
+                    document.getElementById("names").innerHTML = "Legutoljára a(z)" + geese.slice(0, geese.length-1) + " és" + geese[geese.length-1] + " nevű ludakat láttam.";
+                }
+            }
             
             function addGoose() {
                 var errorMessage = "nem adtál meg nevet";
@@ -22,14 +30,15 @@
                 if (x === "") {
                     document.getElementById("alert").innerHTML = errorMessage;
                 } else if (geese.length <= 4) {
-                    geese.unshift(x);
+                    geese.unshift(" " + x);
                     errorMessage = "";
+                    print();
                 } else {
                     geese.pop();
-                    geese.unshift(x);
+                    geese.unshift(" " + x);
                     errorMessage = "";
+                    print();
                 }
-                document.getElementById("names").innerHTML = "Legutoljára a(z) " + geese.join(" és ") + " nevű ludakat láttam.";
                 document.getElementById("alert").innerHTML = errorMessage;
             }
 
