@@ -3,49 +3,39 @@
         <title>Lúdszámláló</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="script.js" type="text/javascript"></script>
     </head>
     <body>
+        <div id="add-goose">
+            <input type="text" id="newGeese">
+            <button onclick="add()">HOZZÁADOM EZT A LUDAT</button>
+            <label id="alert"></label>
+        </div>
 
-        <p id="names">Még nem láttam ludat.</p>
-        <input type="text" id="newGeese">
-        <label id="alert"></label>
-        <button onclick="addGoose()">HOZZÁADOM EZT A LUDAT</button>
+        <div id="goose-list">
 
-        <script>
-            
-            var geese = [];
-        
-            function print() {
-                var text;
+            <div id="goose-item">
+                <ul class="goose-data">
+                    <li class="name" onclick="hide()">Richard Parker</li>
+                    <li class="weight">súly: 10kg</li>
+                    <li class="delete"><button class="btn" onclick="removeGoose()">TÖRLÉS</button></li>
+                </ul>
+                <ul id="hide">
+                    <li class="name-modify">
+                        <label>név:</label>
+                        <input type="text">
+                    </li>
+                    <li class="weight-modify">
+                        <label>súly:</label>
+                        <input type="number">
+                    </li>
+                    <li>
+                        <button class="btn">MÓDOSÍT</button>
+                    </li>
+                </ul>
+            </div>
 
-                if (geese.length === 1) {
-                    text = "Legutoljára a(z)" + geese + " nevű ludat láttam.";
-                } else {
-                    text = "Legutoljára a(z)" + geese.slice(0, geese.length-1) + " és" + geese[geese.length-1] + " nevű ludakat láttam.";
-                }
-                document.getElementById("names").innerHTML = text;
-            }
-            
-            function addGoose() {
-                var errorMessage = "nem adtál meg nevet";
-                var x = document.getElementById("newGeese").value;
-
-                if (x === "") {
-                    document.getElementById("alert").innerHTML = errorMessage;
-                } else if (geese.length <= 4) {
-                    geese.unshift(" " + x);
-                    errorMessage = "";
-                    print();
-                } else {
-                    geese.pop();
-                    geese.unshift(" " + x);
-                    errorMessage = "";
-                    print();
-                }
-                document.getElementById("alert").innerHTML = errorMessage;
-            }
-
-        </script>
+        </div>
 
     </body>
 </html>

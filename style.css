@@ -1,27 +1,67 @@
 body {
+    font-size: 16px;
     text-align: center;
-    font-size: 22px;
     font-family: 'Montserrat';
     margin: 50px 0 0 0;
 }
-p {
-    margin: 0;
-}
-button {
+
+#add-goose button {
     display: block;
     margin: 0 auto;
     padding: 10px;
 }
-input {
-    width: 120px;
+
+#add-goose input {
+    width: 150px;
     padding: 5px;
-    margin: 20px 0 0 0;
+    margin: 0 0 20px 0;
 }
-label {
+
+#add-goose label {
     height: 30px;
     display: block;
     margin: 0 auto;
     padding-top: 10px;
     color: red;
     font-size: 14px;
+}
+
+#goose-list {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#goose-item ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+#goose-item ul li {
+    list-style: none;
+    display: inline;
+}
+
+#goose-item label {
+    display: inline;
+}
+
+#goose-item input {
+    width: 100px;
+}
+
+#goose-item button {
+    width: 100px;
+}
+
+#goose-item .modify {
+    display: none;
+}
+
+#goose-item .name {
+    cursor: pointer;
+}
+
+#goose-list #hide {
+    display: none;
 }
