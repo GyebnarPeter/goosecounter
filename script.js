@@ -11,3 +11,9 @@ function removeGoose() {
     var y = document.getElementById("goose-item");
     y.remove();
 }
+
+function modify() {
+    var z = document.getElementById("newName").value;
+    document.getElementById("name").innerHTML = z;
+    hide();
+}

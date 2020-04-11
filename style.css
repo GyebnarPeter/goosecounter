@@ -58,7 +58,7 @@ body {
     display: none;
 }
 
-#goose-item .name {
+#goose-item #name {
     cursor: pointer;
 }
 

@@ -16,21 +16,21 @@
 
             <div id="goose-item">
                 <ul class="goose-data">
-                    <li class="name" onclick="hide()">Richard Parker</li>
+                    <li id="name" onclick="hide()">Richard Parker</li>
                     <li class="weight">súly: 10kg</li>
                     <li class="delete"><button class="btn" onclick="removeGoose()">TÖRLÉS</button></li>
                 </ul>
                 <ul id="hide">
-                    <li class="name-modify">
+                    <li>
                         <label>név:</label>
-                        <input type="text">
+                        <input type="text" id="newName">
                     </li>
                     <li class="weight-modify">
                         <label>súly:</label>
                         <input type="number">
                     </li>
                     <li>
-                        <button class="btn">MÓDOSÍT</button>
+                        <button class="btn" onclick="modify()">MÓDOSÍT</button>
                     </li>
                 </ul>
             </div>
