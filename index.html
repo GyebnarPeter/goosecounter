@@ -3,38 +3,38 @@
         <title>Lúdszámláló</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-        <script src="script.js" type="text/javascript"></script>
+        <script defer src="script.js"></script>
     </head>
     <body>
         <div id="add-goose">
-            <input type="text" id="newGeese">
-            <button onclick="add()">HOZZÁADOM EZT A LUDAT</button>
+            <input type="text" id="new-goose">
+            <button id="add-btn">HOZZÁADOM EZT A LUDAT</button>
             <label id="alert"></label>
         </div>
 
         <div id="goose-list">
-
-            <div id="goose-item">
+            <!--
+            <div class="goose-item">
                 <ul class="goose-data">
-                    <li id="name" onclick="hide()">Richard Parker</li>
-                    <li class="weight">súly: 10kg</li>
-                    <li class="delete"><button class="btn" onclick="removeGoose()">TÖRLÉS</button></li>
+                    <li class="goose-name"></li>
+                    <li class="goose-weight"></li>
+                    <li><button class="delete-btn"></button></li>
                 </ul>
-                <ul id="hide">
+                <ul class="goose-modify">
                     <li>
                         <label>név:</label>
-                        <input type="text" id="newName">
-                    </li>
-                    <li class="weight-modify">
-                        <label>súly:</label>
-                        <input type="number">
+                        <input type="text" class="new-name">
                     </li>
                     <li>
-                        <button class="btn" onclick="modify()">MÓDOSÍT</button>
+                        <label>súly:</label>
+                        <input type="number" class="new-weight">
+                    </li>
+                    <li>
+                        <button class="modify-btn"></button>
                     </li>
                 </ul>
             </div>
-
+            -->
         </div>
 
     </body>

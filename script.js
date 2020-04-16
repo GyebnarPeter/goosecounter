@@ -1,19 +1,36 @@
-function hide() {
-    var x = document.getElementById("hide");
-    if (x.style.display === "none") {
-        x.style.display = "flex";
-    } else {
-        x.style.display = "none";
-    }
-}
+var addButton = document.getElementById("add-btn");
 
-function removeGoose() {
-    var y = document.getElementById("goose-item");
-    y.remove();
-}
+addButton.addEventListener("click", addGoose);
 
-function modify() {
-    var z = document.getElementById("newName").value;
-    document.getElementById("name").innerHTML = z;
-    hide();
+function addGoose() {
+    var gooseList = document.getElementById("goose-list");
+
+    //GOOSE ITEM
+    var newItem = document.createElement("div");
+    newItem.className = "goose-item";
+
+    //MAIN LIST
+    var goose = document.getElementById("new-goose").value;
+    var name = document.createTextNode(goose);
+    var weight = document.createTextNode(Math.floor(Math.random() * 10) + " kg");
+    var mainList = document.createElement("ul");
+    mainList.className = "goose-data";
+    var nameListItem = document.createElement("li");
+    var weightListItem = document.createElement("li");
+    var deleteListItem = document.createElement("li");
+    var deleteButton = document.createElement("button");
+    var deleteButtonText = document.createTextNode("TÖRLÉS");
+    deleteButton.appendChild(deleteButtonText);
+    mainList.appendChild(nameListItem);
+    mainList.appendChild(weightListItem);
+    mainList.appendChild(deleteListItem);
+    nameListItem.appendChild(name);
+    weightListItem.appendChild(weight);
+    deleteListItem.appendChild(deleteButton);
+    newItem.appendChild(mainList);
+
+    gooseList.appendChild(newItem);
+
+    //MODIFY LIST...
+
 }

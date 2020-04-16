@@ -5,19 +5,19 @@ body {
     margin: 50px 0 0 0;
 }
 
-#add-goose button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-#add-goose input {
+#new-goose {
     width: 150px;
     padding: 5px;
     margin: 0 0 20px 0;
 }
 
-#add-goose label {
+#add-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#alert {
     height: 30px;
     display: block;
     margin: 0 auto;
@@ -31,37 +31,29 @@ body {
     width: 50%;
 }
 
-#goose-item ul {
+.goose-data, .goose-modify {
     display: flex;
     justify-content: space-between;
     padding: 0;
 }
 
-#goose-item ul li {
+.goose-item ul li {
     list-style: none;
     display: inline;
 }
 
-#goose-item label {
+.goose-modify label {
     display: inline;
 }
 
-#goose-item input {
+.goose-modify input, .goose-item button {
     width: 100px;
 }
 
-#goose-item button {
-    width: 100px;
-}
-
-#goose-item .modify {
-    display: none;
-}
-
-#goose-item #name {
+.goose-name {
     cursor: pointer;
 }
 
-#goose-list #hide {
+.goose-modify {
     display: none;
 }
