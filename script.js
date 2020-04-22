@@ -2,12 +2,16 @@ var addButton = document.getElementById("add-btn");
 
 addButton.addEventListener("click", addGoose);
 
+var idNumber = 0;
+
 function addGoose() {
     var gooseList = document.getElementById("goose-list");
 
     //GOOSE ITEM
     var newItem = document.createElement("div");
     newItem.className = "goose-item";
+    newItem.id = "goose" + idNumber;
+    ++idNumber;
 
     //MAIN LIST
     var goose = document.getElementById("new-goose").value;
