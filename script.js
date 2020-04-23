@@ -1,9 +1,8 @@
 var addButton = document.getElementById("add-btn");
-
 addButton.addEventListener("click", addGoose);
 
+//NEW GOOSE
 var idNumber = 0;
-
 function addGoose() {
     var gooseList = document.getElementById("goose-list");
 
@@ -11,6 +10,7 @@ function addGoose() {
     var newItem = document.createElement("div");
     newItem.className = "goose-item";
     newItem.id = "goose" + idNumber;
+    var temp = idNumber;
     ++idNumber;
 
     //MAIN LIST
@@ -23,6 +23,7 @@ function addGoose() {
     var weightListItem = document.createElement("li");
     var deleteListItem = document.createElement("li");
     var deleteButton = document.createElement("button");
+    deleteButton.onclick = () => deleteGoose(temp);
     var deleteButtonText = document.createTextNode("TÖRLÉS");
     deleteButton.appendChild(deleteButtonText);
     mainList.appendChild(nameListItem);
@@ -32,9 +33,19 @@ function addGoose() {
     weightListItem.appendChild(weight);
     deleteListItem.appendChild(deleteButton);
     newItem.appendChild(mainList);
-
     gooseList.appendChild(newItem);
-
-    //MODIFY LIST...
-
 }
+
+//DELETE GOOSE
+function deleteGoose(temp) {
+    document.getElementById("goose" + temp).remove();
+}
+
+//SUM WEIGHT
+
+
+
+
+
+
+

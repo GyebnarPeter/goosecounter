@@ -57,15 +57,3 @@ body {
 .goose-modify {
     display: none;
 }
-
-#goose0 {
-    color: red;
-}
-
-#goose1 {
-    color: blue;
-}
-
-#goose2 {
-    color: yellow;
-}
