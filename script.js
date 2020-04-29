@@ -1,30 +1,32 @@
-var addButton = document.getElementById("add-btn");
+let addButton = document.getElementById("add-btn");
 addButton.addEventListener("click", addGoose);
 
 //NEW GOOSE
-var idNumber = 0;
+let idNumber = 0;
+let sumWeight = 0;
 function addGoose() {
-    var gooseList = document.getElementById("goose-list");
+    let gooseList = document.getElementById("goose-list");
 
     //GOOSE ITEM
-    var newItem = document.createElement("div");
+    let newItem = document.createElement("div");
     newItem.className = "goose-item";
     newItem.id = "goose" + idNumber;
-    var temp = idNumber;
+    let temp = idNumber;
     ++idNumber;
+    let gooseWeight = Math.floor(Math.random() * 10);
 
     //MAIN LIST
-    var goose = document.getElementById("new-goose").value;
-    var name = document.createTextNode(goose);
-    var weight = document.createTextNode(Math.floor(Math.random() * 10) + " kg");
-    var mainList = document.createElement("ul");
+    let goose = document.getElementById("new-goose").value;
+    let name = document.createTextNode(goose);
+    let weight = document.createTextNode(gooseWeight + " kg");
+    let mainList = document.createElement("ul");
     mainList.className = "goose-data";
-    var nameListItem = document.createElement("li");
-    var weightListItem = document.createElement("li");
-    var deleteListItem = document.createElement("li");
-    var deleteButton = document.createElement("button");
-    deleteButton.onclick = () => deleteGoose(temp);
-    var deleteButtonText = document.createTextNode("TÖRLÉS");
+    let nameListItem = document.createElement("li");
+    let weightListItem = document.createElement("li");
+    let deleteListItem = document.createElement("li");
+    let deleteButton = document.createElement("button");
+    deleteButton.onclick = () => deleteGoose(temp, gooseWeight);
+    let deleteButtonText = document.createTextNode("TÖRLÉS");
     deleteButton.appendChild(deleteButtonText);
     mainList.appendChild(nameListItem);
     mainList.appendChild(weightListItem);
@@ -34,17 +36,17 @@ function addGoose() {
     deleteListItem.appendChild(deleteButton);
     newItem.appendChild(mainList);
     gooseList.appendChild(newItem);
+
+    sumWeight += gooseWeight
+    document.getElementById("sum-weight").innerHTML = `Ludaink összsúlya: ${sumWeight} kg`;
 }
 
 //DELETE GOOSE
-function deleteGoose(temp) {
+function deleteGoose(temp, gooseWeight) {
+    sumWeight -= gooseWeight;
+    document.getElementById("sum-weight").innerHTML = `Ludaink összsúlya: ${sumWeight} kg`;
     document.getElementById("goose" + temp).remove();
 }
-
-//SUM WEIGHT
-
-
-
 
 
 
